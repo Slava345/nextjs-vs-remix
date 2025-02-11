@@ -1,11 +1,17 @@
-# Welcome to Remix!
-
-Add shadcn component:
-```shellscript
-pnpm dlx shadcn@canary add [COMPONENT]
+# Setup
+1. Install dependencies. pnpm MUST be used:
+```sh
+pnpm  i
 ```
 
-- 📖 [Remix docs](https://remix.run/docs)
+2. Create .env file with this variables:
+```sh
+BRAND_NAME=
+GATEWAY=
+SERVER_FETCH_URL=
+IMG_ORIGIN=
+WEBSOCKET=
+```
 
 ## Development
 
@@ -43,3 +49,9 @@ Make sure to deploy the output of `npm run build`
 ## Styling
 
 This template comes with [Tailwind CSS](https://tailwindcss.com/) already configured for a simple default starting experience. You can use whatever css framework you prefer. See the [Vite docs on css](https://vitejs.dev/guide/features.html#css) for more information.
+
+## Adding new component from shadcn
+Add shadcn component:
+```sh
+pnpm dlx shadcn@canary add [COMPONENT]
+```

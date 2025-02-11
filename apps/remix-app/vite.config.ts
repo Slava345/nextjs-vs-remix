@@ -1,6 +1,12 @@
 import { vitePlugin as remix } from "@remix-run/dev";
 import { defineConfig } from "vite";
 import tsconfigPaths from "vite-tsconfig-paths";
+import path from "node:path"
+import dotenv from "dotenv"
+
+dotenv.config({
+  path: path.resolve(process.cwd(), "../../.env"),
+})
 
 declare module "@remix-run/node" {
   interface Future {

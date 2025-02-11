@@ -28,7 +28,6 @@
   },
   "devDependencies": {
     "@turbo/gen": "^2.2.3",
-    "@types/node": "^22.9.0",
     "@types/react": "19.0.8",
     "@types/react-dom": "19.0.3",
     "@workspace/eslint-config": "workspace:*",

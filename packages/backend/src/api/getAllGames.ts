@@ -5,8 +5,10 @@ import { v4 as uuid } from "uuid";
 //   const url = `${path}/v1/product-layout?brandName=${process.env.BRAND_NAME}`
 export async function getAllGames() {
   try {
+    const url = `${process.env.SERVER_FETCH_URL}/v1/product-layout?brandName=${process.env.BRAND_NAME}`;
+    
     return await fetch(
-      `${process.env.SERVER_FETCH_URL}/v1/product-layout?brandName=${process.env.BRAND_NAME}`,
+      url,
       {
         method: "get",
         credentials: "include",
