@@ -1,0 +1,21 @@
+{
+  "name": "@workspace/backend",
+  "version": "0.0.0",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "lint": "eslint . --max-warnings 0"
+  },
+  "dependencies": {
+   "uuid": "^9.0.1"
+  },
+  "devDependencies": {
+    "@types/uuid": "^9.0.6",
+    "typescript": "^5.6.3"
+  },
+  "exports": {
+    "./api/*": "./src/api/*.ts",
+    "./types.ts": "./src/types.ts"
+    
+  }
+}
