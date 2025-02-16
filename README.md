@@ -4,4 +4,5 @@ We have two applications: **Next.js (v15.1.6)** and **Remix (v2.15.3)**. Both ru
 
 
 https://vercel.com/patrianna/test-next-app
+
 https://vercel.com/patrianna/test-remix-app
