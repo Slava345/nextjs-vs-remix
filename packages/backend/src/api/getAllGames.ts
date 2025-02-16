@@ -1,4 +1,5 @@
 import { v4 as uuid } from "uuid";
+import { GameCategory } from "@workspace/backend/types.ts";
 
 
 // const path = !isBrowser() ? process.env.SERVER_FETCH_URL : process.env.GATEWAY
@@ -7,7 +8,7 @@ export async function getAllGames() {
   try {
     const url = `${process.env.SERVER_FETCH_URL}/v1/product-layout?brandName=${process.env.BRAND_NAME}`;
     
-    return await fetch(
+    const resp =  await fetch(
       url,
       {
         method: "get",
@@ -20,7 +21,17 @@ export async function getAllGames() {
         },
       }
     );
+    const data = await (resp as Response).json();
+
+    return {
+      categories: data.categories as GameCategory[],
+      error: null,
+    };
+
   } catch (error) {
-    return new Error("err fetching games");
+    return {
+      categories: [],
+      error,
+    };
   }
 }

@@ -12,8 +12,15 @@ import {
   BreadcrumbPage,
   BreadcrumbSeparator,
 } from "@workspace/ui/components/breadcrumb";
+import ContentPlaceholder from "@workspace/ui/app/dashboard/ContentPlaceholder";
+import GameCategories from "@workspace/ui/app/dashboard/GameCategories";
+import { GameCategory } from "@workspace/backend/types.ts";
 
-export default function Page() {
+type Props = {
+  categories: GameCategory[] | never[];
+};
+
+export default function DashboardPage({ categories }: Props) {
   return (
     <div className="[--header-height:calc(theme(spacing.14))]">
       <SidebarProvider className="flex flex-col">
@@ -21,13 +28,11 @@ export default function Page() {
         <div className="flex flex-1">
           <AppSidebar />
           <SidebarInset>
-            <div className="flex flex-1 flex-col gap-4 p-4">
-              <Breadcrumb className="hidden sm:block">
+            <div className="flex flex-1 flex-col gap-4">
+              <Breadcrumb className="hidden sm:block p-4">
                 <BreadcrumbList>
                   <BreadcrumbItem>
-                    <BreadcrumbLink href="#">
-                      Categories
-                    </BreadcrumbLink>
+                    <BreadcrumbLink href="#">Categories</BreadcrumbLink>
                   </BreadcrumbItem>
                   <BreadcrumbSeparator />
                   <BreadcrumbItem>
@@ -36,12 +41,11 @@ export default function Page() {
                 </BreadcrumbList>
               </Breadcrumb>
 
-              <div className="grid auto-rows-min gap-4 md:grid-cols-3">
-                <div className="aspect-video rounded-xl bg-muted/50" />
-                <div className="aspect-video rounded-xl bg-muted/50" />
-                <div className="aspect-video rounded-xl bg-muted/50" />
-              </div>
-              <div className="min-h-[100vh] flex-1 rounded-xl bg-muted/50 md:min-h-min" />
+              {categories.length > 0 ? (
+                <GameCategories categories={categories} />
+              ) : (
+                <ContentPlaceholder />
+              )}
             </div>
           </SidebarInset>
         </div>
