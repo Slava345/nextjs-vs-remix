@@ -24,7 +24,7 @@ export function SiteHeader() {
         </Button>
         <Separator orientation="vertical" className="mr-2 h-4" />
 
-        LOGO
+        <a href="/">LOGO</a>
        
         <SearchForm className="w-full sm:ml-auto sm:w-auto" />
       </div>

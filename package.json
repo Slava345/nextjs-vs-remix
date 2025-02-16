@@ -3,6 +3,8 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
+    "next-dev": "cd apps/next-app && pnpm dev",
+    "remix-dev": "cd apps/remix-app && pnpm dev",
     "build": "turbo build",
     "dev": "turbo dev",
     "lint": "turbo lint",

@@ -1,5 +1,6 @@
 {
   "$schema": "https://turbo.build/schema.json",
+  "globalEnv": ["IMG_ORIGIN"],
   "ui": "tui",
   "tasks": {
     "build": {

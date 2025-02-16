@@ -186,3 +186,30 @@ export type TokenData = {
   subject: string
   country: string
 }
+
+export interface GameData {
+  animatedTile: boolean;
+  code: string;
+  mode: string;
+  moreInfo: boolean;
+  rank: number;
+  route: string;
+  supplierSearchCode: string;
+  supplierTitle: string;
+  tags: string[];
+  title: string;
+  type: string;
+}
+
+export interface GameCategory {
+  code: string;
+  title:string;
+  index: number;
+  icon: string;
+  route: string;
+  lines: number;
+  style: string;
+  type: string;
+  promotionUrl: string;
+  products: GameData[];
+};
