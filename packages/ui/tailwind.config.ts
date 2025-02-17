@@ -1,4 +1,5 @@
 import type { Config } from "tailwindcss"
+import { SIDEBAR_WIDTH } from "./src/components/config.js"
 import tailwindcssAnimate from "tailwindcss-animate"
 
 const config = {
@@ -50,7 +51,7 @@ const config = {
   				foreground: 'hsl(var(--card-foreground))'
   			},
   			sidebar: {
-  				DEFAULT: 'hsl(var(--sidebar-background))',
+				DEFAULT: 'hsl(var(--sidebar-background))',
   				foreground: 'hsl(var(--sidebar-foreground))',
   				primary: 'hsl(var(--sidebar-primary))',
   				'primary-foreground': 'hsl(var(--sidebar-primary-foreground))',
@@ -60,6 +61,9 @@ const config = {
   				ring: 'hsl(var(--sidebar-ring))'
   			}
   		},
+		width:{
+			'minus-sidebar': `calc(100vw - ${SIDEBAR_WIDTH})`,
+		},
   		borderRadius: {
   			lg: 'var(--radius)',
   			md: 'calc(var(--radius) - 2px)',
