@@ -18,13 +18,14 @@ import { GameCategory } from "@workspace/backend/types.ts";
 
 type Props = {
   categories: GameCategory[] | never[];
+  appName?: string;
 };
 
-export default function DashboardPage({ categories }: Props) {
+export default function DashboardPage({ categories, appName }: Props) {
   return (
     <div className="[--header-height:calc(theme(spacing.14))]">
       <SidebarProvider className="flex flex-col">
-        <SiteHeader />
+        <SiteHeader appName={appName} />
         <div className="flex flex-1">
           <AppSidebar />
           <SidebarInset>

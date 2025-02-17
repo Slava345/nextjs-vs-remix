@@ -11,5 +11,5 @@ export const loader = async () => {
 export default function Home() {
   const {categories} = useLoaderData<typeof loader>();
 
-  return <HomePage categories={categories} />;
+  return <HomePage categories={categories} appName={'REMIX'} />;
 }

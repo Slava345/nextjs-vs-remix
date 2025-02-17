@@ -4,5 +4,5 @@ import { getAllGames } from "@workspace/backend/api/getAllGames";
 export default async function Home() {
   const data = await getAllGames();
 
-  return <HomePage categories={data.categories} />;
+  return <HomePage categories={data.categories} appName="NEXT" />;
 }

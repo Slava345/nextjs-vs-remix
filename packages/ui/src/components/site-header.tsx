@@ -8,7 +8,11 @@ import { Button, buttonVariants } from "@workspace/ui/components/button";
 import { Separator } from "@workspace/ui/components/separator";
 import { useSidebar } from "@workspace/ui/components/sidebar";
 
-export function SiteHeader() {
+type Props = {
+  appName?: string;
+};
+
+export function SiteHeader({appName}: Props) {
   const { toggleSidebar } = useSidebar();
 
   return (
@@ -24,7 +28,7 @@ export function SiteHeader() {
         </Button>
         <Separator orientation="vertical" className="mr-2 h-4 md:hidden" />
 
-        <a href="/">LOGO</a>
+        <a href="/">{appName || 'LOGO'}</a>
 
         <SearchForm className="w-full sm:ml-auto sm:w-auto" />
         
